@@ -11,7 +11,7 @@ import SwiftUI
 struct XcodersGraphQLApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContinentListScreen() 
         }
     }
 }
