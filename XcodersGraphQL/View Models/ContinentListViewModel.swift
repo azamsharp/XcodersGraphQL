@@ -14,18 +14,7 @@ class ContinentListViewModel: ObservableObject {
     
     func populateAllContinents() {
         
-        Network.shared.apollo.fetch(query: GetAllContinentsQuery()) { [weak self] result in
-            switch result {
-                case .success(let graphQLResult):
-                    DispatchQueue.main.async {
-                        if let continents = graphQLResult.data?.continents {
-                            self?.continents = continents.map(ContinentViewModel.init)
-                        }
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-            }
-        }
+        // Get all continents 
     }
 }
 

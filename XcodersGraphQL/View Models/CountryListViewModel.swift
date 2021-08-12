@@ -15,16 +15,7 @@ class CountryListViewModel: ObservableObject {
     
     func populateCountriesByContinent(code: String) {
         
-        Network.shared.apollo.fetch(query: GetCountriesByContinentQuery(code: code)) { [weak self] result in
-            switch result {
-                case .success(let graphQLResult):
-                    if let countries = graphQLResult.data?.countries {
-                        self?.countries = countries.map(CountryViewModel.init)
-                    }
-                case .failure(let error):
-                    print(error)
-            }
-        }
+        // Get all countries based on a continent
     }
     
 }
@@ -59,4 +50,4 @@ struct StateViewModel {
         state.name
     }
     
-}
+} 
